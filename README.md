@@ -1,3 +1,5 @@
+Para acessar o projeto ultilize do link: https://portifolio-minhas-artes.vercel.app/
+
 //o projeto a seguir foi criado durante a Imersão Dev com Google Gemini proposto pela plataforma de cursos Alura em uma parceria com a Google.
 
 **## README.md: Apresentação do Portfólio da リサAiko**
