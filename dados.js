@@ -41,4 +41,7 @@ let dados = [
     {
         pathArte:"/img/Forgotten Revolution.png"
     },
+    {
+        pathArte:"/img/ariesfight.png"
+    },
 ]
