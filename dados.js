@@ -1,47 +1,47 @@
 let dados = [
     {
-        pathArte:"/img/stopthinkaboutit1.png"
+        pathArte:"/img/stopthinkaboutit1.jpg"
     },
     {
-        pathArte:"/img/aries.png"
+        pathArte:"/img/aries.jpg"
     },
     {
-        pathArte:"/img/kiminisekai.png"
+        pathArte:"/img/kiminisekai.jpg"
     },
     {
-        pathArte:"/img/oliver.png"
+        pathArte:"/img/oliver.jpg"
     },
     {
-        pathArte:"/img/ibara.png"
+        pathArte:"/img/ibara.jpg"
     },
     {
-        pathArte:"/img/aiko.png"
+        pathArte:"/img/aiko.jpg"
     },
     {
-        pathArte:"/img/in my feelings.png"
+        pathArte:"/img/in my feelings.jpg"
     },
     {
-        pathArte:"/img/hoje cedo.png"
+        pathArte:"/img/hoje cedo.jpg"
     },
     {
-        pathArte:"/img/love letter.png"
+        pathArte:"/img/love letter.jpg"
     },
     {
-        pathArte:"/img/replai.png"
+        pathArte:"/img/replai.jpg"
     },
     {
-        pathArte:"/img/hollowness.png"
+        pathArte:"/img/hollowness.jpg"
     },
     {
-        pathArte:"/img/trust.png"
+        pathArte:"/img/trust.jpg"
     },
     {
-        pathArte:"/img/yume.png"
+        pathArte:"/img/yume.jpg"
     },
     {
-        pathArte:"/img/Forgotten Revolution.png"
+        pathArte:"/img/Forgotten Revolution.jpg"
     },
     {
-        pathArte:"/img/ariesfight.png"
+        pathArte:"/img/ariesfight.jpg"
     },
 ]

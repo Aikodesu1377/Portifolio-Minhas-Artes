@@ -86,24 +86,6 @@ header {
     box-shadow: 0 4px 8px #400f0f; /* Adiciona uma sombra mais intensa */
 }
 
-/* Estiliza os botões dentro das seções */
-.botao-vermais {
-    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 1.5rem; /* Borda arredondada */
-    background-color: #961919; /* Cor de fundo do botão */
-    color: #F5F7F8; /* Cor do texto do botão */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    position:absolute; /* Posiciona o rodapé */
-    bottom: 50px; /* Ajusta o rodapé a 20 pixels da borda inferior */
-    width: 10%;
-    right: 685px;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-}
-
 /* Adiciona efeito hover ao botão de ver mais */
 .botao-vermais:hover {
     background-color: #961919; /* Muda a cor de fundo ao passar o mouse */
