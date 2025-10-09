@@ -1,106 +1,300 @@
-/* Importa a fonte Chakra Petch do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* Estiliza o corpo da página */
 body {
-    font-family: "Chakra Petch", sans-serif; /* Define a fonte padrão */
-    background-color: #231f1f; /* Cor de fundo da página */
-    display:flex; /* Usa Flexbox para layout */
-    flex-direction:column; /* Alinha os itens na vertical */
-    align-items:center; /* Centraliza os itens horizontalmente */
-    justify-content:right; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o padding padrão */
+    font-family: "Chakra Petch", sans-serif;
+    background-color: #2b2d2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Usa min-height para garantir que o corpo cresça */
+    padding: 0;
+    margin: 0; /* Garante que não haja margem padrão */
 }
+
+/* ----------------------------------------------------------------- */
+/* CABEÇALHO (HEADER) */
+/* ----------------------------------------------------------------- */
 
 header {
-    background-color: #090707; /* Cor de fundo do cabeçalho */
-    padding: 3%;
-    width: 94%;
-}
-.logo {
-    position:absolute;
-    top: -4px;
-    left: 20px;
-    width: 100px;
-    height: 100px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #202425; 
+    padding: 10px 3vw 5px 3vw; /* Usa 'vw' (viewport width) para padding lateral */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
+    transition: transform 0.3s ease-in-out; 
 }
 
+.header-group-left {
+    display: flex;
+    align-items: center; 
+    margin-right: 5vw; /* Usa 'vw' para margem */
+}
+
+.header-hidden {
+    transform: translateY(-100%); 
+}
+
+.logo {
+    width: 80px; 
+    height: 80px; 
+    margin-right: 60px; 
+}
+
+.botao-encomenda {
+    border-radius: 8px; 
+    position: static; 
+    margin-top: 5px; 
+    width: 150px;
+    height: 65px; 
+    background-color: #93b9c3; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    letter-spacing: 0.5px; 
+    text-transform: uppercase; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.2s ease-in-out; 
+}
+ 
+.botao-encomenda:hover {
+    background-color: #7b9fb5; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); 
+}
+
+.botao-encomenda:active {
+    transform: translateY(1px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* ----------------------------------------------------------------- */
+/* IMAGEM PRINCIPAL COM TEXTO (HERO) */
+/* ----------------------------------------------------------------- */
+
+.imagem-com-texto {
+    width: 100%; /* Usa 100% da largura do contêiner */
+    height: 70vh; /* Usa 70% da altura da viewport para ser responsivo */
+    max-height: 820px; /* Mantém um limite superior */
+    background-image: url('/img/matsuri.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    color: white; 
+    text-shadow: 0 2px 20px #191819; 
+    margin-top: 90px; /* Adicionado espaço para o header fixo não cobrir */
+}
+
+.imagem-com-texto h1 {
+    font-size: 4rem; /* Reduzido o tamanho para se adaptar melhor a telas menores */
+    margin-bottom: 5px;
+}
+
+.imagem-com-texto p {
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+/* ----------------------------------------------------------------- */
+/* TEXTO PORTFÓLIO */
+/* ----------------------------------------------------------------- */
+
+.texto-portifolio {
+    color: white;
+    text-align: left;
+    width: 94%; /* Limita a largura do contêiner */
+    margin: 30px 3%; /* Adiciona margem superior e inferior, e centraliza */
+}
+
+.texto-portifolio h1 {
+    color: inherit; 
+    font-size: 2rem; /* Tamanho do título do portfólio */
+}
+
+/* ----------------------------------------------------------------- */
+/* GRID DE ARTES OTIMIZADO */
+/* ----------------------------------------------------------------- */
 
 .grid-artes {
-    position:absolute;
-    top: 100px;
+    position: static;
+    width: 100%; 
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0px;
+    gap: 10px;
+}
+
+.arte {
+    position: relative; 
+    overflow: hidden; 
+    
+    /* 🔑 OTIMIZAÇÃO: Avisa o navegador para usar a GPU para o zoom e a sombra */
+    will-change: transform, box-shadow; 
+    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }
 
 .arte img {
     width: 100%;
-    height: 150px;
+    height: 100%;
+    aspect-ratio: 1 / 1; 
     object-fit: cover;
-    margin: 0;
+    display: block;
+    
+    /* 🔑 OTIMIZAÇÃO: Avisa o navegador para usar a GPU para o filtro (escurecimento) */
+    will-change: filter;
+    
+    transition: filter 0.3s ease-in-out;
 }
 
-.arte:hover{
-    border: none;
-    background-color: none; /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 2px 20px #400f0f; /* Adiciona uma sombra mais intensa */
-    transform: scale(1.1); /* Aumenta a imagem em 10% */
-    margin: 0;
-}
-.botao-encomenda {
-    position:absolute;
-    top: -4px;
-    left: 150px;
-    border: none;
-    width: 150px;
-    height: 95px;
-    background-color: #400f0f;
+
+
+/* Estilo do Botão de Download (Mantido) */
+.download-button {
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: azure (0, 0, 0, 0.7); 
     color: white;
-    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none; 
+    font-size: 0.9rem;
+    font-weight: bold;
     cursor: pointer;
-}
-  
-.botao-encomenda:hover {
-    background-color: #961919; /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px #400f0f; /* Adiciona uma sombra mais intensa */
-}
-
-.botao-biografia {
-    position:absolute;
-    top: -4px;
-    left: 302px;
-    border: none;
-    width: 150px;
-    height: 95px;
-    background-color: #400f0f;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-}
-  
-.botao-biografia:hover {
-    background-color: #961919; /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px #400f0f; /* Adiciona uma sombra mais intensa */
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; 
+    z-index: 2; 
+    border: 1px solid white; 
 }
 
-/* Adiciona efeito hover ao botão de ver mais */
-.botao-vermais:hover {
-    background-color: #961919; /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px #400f0f; /* Adiciona uma sombra mais intensa */
+.arte:hover {
+    box-shadow: 0 2px 20px rgba(25, 24, 25, 0.8); 
+    transform: scale(1.05); 
+    z-index: 1; 
 }
 
-/* Estiliza o rodapé da página */
+.arte:hover .download-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.arte:hover img {
+    filter: brightness(70%);
+}
+
+/* ----------------------------------------------------------------- */
+/* RODAPÉ (FOOTER) */
+/* ----------------------------------------------------------------- */
+
 footer {
-    background-color: #F5F7F8; /* Cor de fundo do rodapé */
-    color: #45474B; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
-    padding: 0; /* Espaçamento interno */
-    width: 100%; /* Largura total da página */
-    position:absolute; /* Posiciona o rodapé */
-    bottom: -150px; /* Ajusta o rodapé a 20 pixels da borda inferior */
+    background-color: #F5F7F8; 
+    color: #45474B; 
+    text-align: center; 
+    padding: 20px 0; /* Padding vertical para dar espaço */
+    width: 100%;
+    position: static; /* CHAVE: Permite que ele fique no fim do conteúdo */
+    font-size: 1rem;
+    margin-top: 40px; /* Adiciona um espaço antes do rodapé */
+}
+
+/* ----------------------------------------------------------------- */
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+/* ----------------------------------------------------------------- */
+
+/* Telas Médias (Ex: Tablets na vertical) */
+@media (max-width: 1024px) {
+    .grid-artes {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    }
+
+    .imagem-com-texto h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Telas Pequenas (Ex: Celulares) */
+@media (max-width: 600px) {
+    .grid-artes {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .botao-encomenda {
+        width: 120px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .imagem-com-texto {
+        height: 50vh;
+    }
+    
+    .imagem-com-texto h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 1. Esconde o cursor padrão do sistema em todos os lugares */
+body, a, button, .botao-encomenda, .arte {
+    cursor: none !important; 
+}
+
+/* 2. Estiliza o ponto personalizado */
+#custom-cursor {
+    width: 20px; /* Aumentei o tamanho base para o anel ser mais visível */
+    height: 20px;
+    
+    /* 🔑 MUDANÇA: Preenchimento totalmente transparente */
+    background-color: transparent; 
+    
+    /* 🔑 ADIÇÃO: Borda fina e preta (ou a cor do seu fundo) */
+    border: 1px solid rgb(212, 25, 25); 
+    
+    border-radius: 50%;
+    position: fixed; 
+    pointer-events: none; 
+    will-change: transform;
+    z-index: 9999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s; /* Adicionado border-color */
+    
+    top: 0;
     left: 0;
-    font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* Opcional: Efeito Sutil de Clique/Hover */
+.cursor-active {
+    width: 30px !important; /* Aumentei um pouco mais para o efeito ser notável */
+    height: 30px !important;
+    
+    /* 🔑 MUDANÇA: Preenche o círculo quando ativo */
+    background-color: rgba(176, 70, 70, 0.8) !important; /* Cor do preenchimento semi-transparente */
+    border: 2px solid rgb(212, 25, 25); 
+    /* 🔑 ADIÇÃO: Remove a borda para deixar só o preenchimento */
+    border-color: transparent !important; 
 }

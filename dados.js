@@ -44,4 +44,19 @@ let dados = [
     {
         pathArte:"/img/ariesfight.jpg"
     },
+    {
+        pathArte:"/img/drumshow.png"
+    },
+    {
+        pathArte:"/img/waveinfeeling.png"
+    },
+    {
+        pathArte:"/img/matsuri.png"
+    },
+    {
+        pathArte:"/img/feelingfine.png"
+    },
+    {
+        pathArte:"/img/ariesstar.png"
+    },
 ]
