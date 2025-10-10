@@ -2,7 +2,7 @@
 
 body {
     font-family: "Chakra Petch", sans-serif;
-    background-color: #2b2d2e;
+    background-color: #d1d6d8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,13 +46,13 @@ header {
     margin-right: 60px; 
 }
 
-.botao-encomenda {
+.botao-padrao {
     border-radius: 8px; 
     position: static; 
     margin-top: 5px; 
     width: 150px;
     height: 65px; 
-    background-color: #93b9c3; 
+    background-color: #5d2828; 
     color: white; 
     border: none;
     cursor: pointer;
@@ -61,17 +61,18 @@ header {
     letter-spacing: 0.5px; 
     text-transform: uppercase; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.1s ease-in-out;
+    margin-right: 10px; 
 }
  
-.botao-encomenda:hover {
+.botao-padrao:hover {
     background-color: #7b9fb5; 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px); 
+    box-shadow: 0 9px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px); 
 }
 
-.botao-encomenda:active {
-    transform: translateY(1px); 
+.botao-padrao:active {
+    transform: translateY(2px); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
@@ -111,7 +112,7 @@ header {
 /* ----------------------------------------------------------------- */
 
 .texto-portifolio {
-    color: white;
+    color: rgb(30, 27, 27);
     text-align: left;
     width: 94%; /* Limita a largura do contêiner */
     margin: 30px 3%; /* Adiciona margem superior e inferior, e centraliza */
