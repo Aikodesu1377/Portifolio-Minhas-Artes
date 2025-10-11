@@ -242,7 +242,25 @@ footer {
 /* ----------------------------------------------------------------- */
 /* MEDIA QUERIES PARA RESPONSIVIDADE */
 /* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/* Oculta o Cursor Personalizado em Dispositivos Móveis */
+/* ----------------------------------------------------------------- */
 
+@media (max-width: 768px) {
+    /* Oculta o elemento do cursor */
+    #custom-cursor {
+        display: none !important;
+    }
+    
+    /* Restaura o cursor padrão do sistema para elementos interativos
+       (O 'cursor: none !important' global precisa ser desfeito, mas
+       como o cursor é controlado por toque, isso é principalmente uma garantia
+       para navegadores que tentam simular um cursor).
+    */
+    body, a, button, .botao-padrao, .arte, .formularios, input, label {
+        cursor: default !important;
+    }
+}
 /* Telas Médias (Ex: Tablets na vertical) */
 @media (max-width: 1024px) {
     .grid-artes {
