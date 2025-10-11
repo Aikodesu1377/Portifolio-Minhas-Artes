@@ -256,31 +256,54 @@ footer {
 
 /* Telas Pequenas (Ex: Celulares) */
 @media (max-width: 600px) {
+    /* ... seu código existente ... */
+
     .grid-artes {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas */
         padding: 0 10px;
     }
 
+    /* 🔑 OTIMIZAÇÃO: Centraliza o texto explicativo */
+    .texto-explicativo {
+        margin-top: 50px;
+        margin-left: 0; /* Remove a margem grande */
+        text-align: center;
+        padding: 0 15px;
+    }
+
     .logo {
         width: 60px;
         height: 60px;
+        margin-right: 20px; /* Reduz a margem do logo */
     }
 
-    .botao-padrao
-     {
-        width: 120px;
-        height: 50px;
-        font-size: 0.9rem;
+    .header-group-left {
+        /* Permite que os botões de ação do cabeçalho quebrem se necessário */
+        flex-wrap: wrap; 
+    }
+    
+    .botao-padrao {
+        width: 100px; /* Reduz ligeiramente */
+        height: 45px;
+        font-size: 0.8rem;
+        margin-right: 5px; /* Reduz a margem entre eles */
+        margin-bottom: 5px; /* Adiciona espaço para quebra */
     }
     
     .imagem-com-texto {
-        height: 50vh;
+        height: 40vh; /* Altura um pouco menor */
     }
     
     .imagem-com-texto h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Título bem menor */
+    }
+    
+    /* Adicione esta regra para garantir que a área do formulário fique bem */
+    .formularios {
+        padding: 0 10px;
     }
 }
+
 body {
 user-select: none;
 -webtkit-user-select: none;
@@ -341,8 +364,17 @@ body, a, button, .botao-padrao, .botao-padrao:active, .botao-padrao:hover, .arte
 
 .checkbox-group {
     display: flex;
-    gap: 30px; 
+    gap: 15px; /* Reduzi o gap para telas pequenas, você pode ajustar */
     margin-top: 15px;
+    
+    /* 🔑 CHAVE: Permite que os itens quebrem para a próxima linha */
+    flex-wrap: wrap; 
+    
+    /* Centraliza os grupos quando quebram */
+    justify-content: center; 
+    
+    /* Adiciona um padding para não "grudar" nas bordas do celular */
+    padding: 0 10px; 
 }
 
 .formularios label {
