@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         customCursor.classList.remove('cursor-active');
     });
 
-    const interactiveElements = document.querySelectorAll('a, button, .arte');
+    const interactiveElements = document.querySelectorAll('a, button, .arte, label, input');
     
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -47,3 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     });
 });
+// -------------
+// Bloqueador
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+document.addEventListener('dragstart', function(event) {
+    event.preventDefault();
+})

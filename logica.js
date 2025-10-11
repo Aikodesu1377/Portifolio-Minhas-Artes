@@ -1,5 +1,7 @@
 // logica.js
 
+// -------------
+// Grid de Artes
 let resultados = document.getElementById("grid-artes");
 resultados.innerHTML = ''; 
 
@@ -20,3 +22,12 @@ for (let dado of dados) {
     arteDiv.appendChild(downloadButton);
     resultados.appendChild(arteDiv);
 }
+// -------------
+// Bloqueador
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+document.addEventListener('dragstart', function(event) {
+    event.preventDefault();
+})

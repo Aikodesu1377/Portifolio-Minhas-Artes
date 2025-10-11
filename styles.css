@@ -5,7 +5,6 @@ body {
     background-color: #d1d6d8;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh; /* Usa min-height para garantir que o corpo cresça */
     padding: 0;
     margin: 0; /* Garante que não haja margem padrão */
@@ -84,8 +83,8 @@ header {
     width: 100%; /* Usa 100% da largura do contêiner */
     height: 70vh; /* Usa 70% da altura da viewport para ser responsivo */
     max-height: 820px; /* Mantém um limite superior */
-    background-image: url('/img/matsuri.png');
-    background-size: cover;
+    background-image: url('/img/trust.jpg');
+    background-size:cover;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -112,7 +111,7 @@ header {
 /* ----------------------------------------------------------------- */
 
 .texto-portifolio {
-    color: rgb(30, 27, 27);
+    color: #191819;
     text-align: left;
     width: 94%; /* Limita a largura do contêiner */
     margin: 30px 3%; /* Adiciona margem superior e inferior, e centraliza */
@@ -121,6 +120,27 @@ header {
 .texto-portifolio h1 {
     color: inherit; 
     font-size: 2rem; /* Tamanho do título do portfólio */
+}
+.texto-explicativo {
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.texto-explicativo h1 {
+    color: #191819;
+}
+.texto-explicativo p {
+    color: #5d2828;
+}
+.desenvolvimento {
+    text-align: center;
+    margin-top: 100px;
+}
+.desenvolvimento h1 {
+    color: #191819;
+}
+.desenvolvimento p {
+    color: #5d2828;
 }
 
 /* ----------------------------------------------------------------- */
@@ -246,7 +266,8 @@ footer {
         height: 60px;
     }
 
-    .botao-encomenda {
+    .botao-padrao
+     {
         width: 120px;
         height: 50px;
         font-size: 0.9rem;
@@ -260,9 +281,15 @@ footer {
         font-size: 2rem;
     }
 }
+body {
+user-select: none;
+-webtkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
 
 /* 1. Esconde o cursor padrão do sistema em todos os lugares */
-body, a, button, .botao-encomenda, .arte {
+body, a, button, .botao-padrao, .botao-padrao:active, .botao-padrao:hover, .arte, .formularios, input, label {
     cursor: none !important; 
 }
 
@@ -273,8 +300,6 @@ body, a, button, .botao-encomenda, .arte {
     
     /* 🔑 MUDANÇA: Preenchimento totalmente transparente */
     background-color: transparent; 
-    
-    /* 🔑 ADIÇÃO: Borda fina e preta (ou a cor do seu fundo) */
     border: 1px solid rgb(212, 25, 25); 
     
     border-radius: 50%;
@@ -298,4 +323,106 @@ body, a, button, .botao-encomenda, .arte {
     border: 2px solid rgb(212, 25, 25); 
     /* 🔑 ADIÇÃO: Remove a borda para deixar só o preenchimento */
     border-color: transparent !important; 
+}
+
+.formularios {
+    margin-top: center;
+    text-align: center;
+}
+/* ----------------------------------------------------------------- */
+/* ESTILIZAÇÃO PARA RADIO BUTTONS (CORREÇÃO FINAL) */
+/* ----------------------------------------------------------------- */
+
+.formularios {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 30px; 
+    margin-top: 15px;
+}
+
+.formularios label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #191819; 
+    position: relative;
+}
+
+/* 1. Esconde o radio button nativo COMPLETAMENTE (usando o seletor de tipo) */
+.formularios input[type="radio"] { 
+    position: absolute;
+    /* CHAVE: Esconde o círculo nativo, eliminando o "círculo feio" */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo do SPAN: Container do texto e dos pseudo-elementos */
+.formularios label span {
+    position: relative;
+    padding-left: 30px; 
+    display: block; 
+    transition: color 0.2s ease-in-out;
+}
+
+/* 2. Cria a caixa de seleção customizada (o CÍRCULO EXTERNO) */
+.formularios label span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    
+    /* CHAVE: Forma de círculo */
+    border-radius: 50%; 
+    
+    border: 1px solid #191819; /* Borda escura */
+    background-color: #d1d6d8; /* Fundo claro */
+    transition: all 0.2s ease-in-out;
+}
+
+/* 3. Estiliza o estado de HOVER (passar o mouse) */
+.formularios label:hover span::before {
+    border-color: #5d2828; 
+    box-shadow: 0 0 5px rgba(93, 40, 40, 0.5);
+}
+
+/* 4. Estiliza o estado MARCADO (o preenchimento do círculo) */
+.formularios input[type="radio"]:checked + span::before { /* O seletor é crucial aqui */
+    background-color: #5d2828; /* Cor de destaque (vinho) */
+    border-color: #5d2828;
+}
+
+/* 5. Cria o ícone de "check" dentro da caixa marcada (o PONTO INTERNO) */
+.formularios label span::after {
+    content: "";
+    position: absolute;
+    /* Ajustes para centralizar o ponto menor dentro do círculo de 20px */
+    left: 4px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px; /* Ponto ligeiramente menor */
+    height: 12px;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.2s ease-in-out;
+    z-index: 3; /* Garante que o ponto interno fique sobre o fundo preenchido */
+}
+
+/* 6. Mostra o ícone de check (o ponto) quando marcado */
+.formularios input[type="radio"]:checked + span::after {
+    opacity: 1;
+}
+
+/* 7. Destaque do texto quando marcado */
+.formularios input[type="radio"]:checked + span {
+    font-weight: 700;
+    color: #5d2828;
 }
