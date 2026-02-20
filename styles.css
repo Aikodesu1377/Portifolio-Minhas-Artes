@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-body {
+{
+    box-sizing: border-box;
+}
+
+html, body {
     font-family: "Chakra Petch", sans-serif;
+    overflow-x: hidden;
     background-color: #d1d6d8;
     display: flex;
     flex-direction: column;
@@ -80,11 +85,11 @@ header {
 /* ----------------------------------------------------------------- */
 
 .imagem-com-texto {
-    width: 100%; /* Usa 100% da largura do contêiner */
-    height: 700vh; /* Usa 70% da altura da viewport para ser responsivo */
-    max-height: 840px; /* Mantém um limite superior */
+    width: 100%; 
+    height: 70vh; /* CORRIGIDO: de 700vh para 70vh */
+    max-height: 840px; 
     background-image: url('/img/can you find me.png');
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -148,14 +153,13 @@ header {
 /* ----------------------------------------------------------------- */
 
 .grid-artes {
-    position: static;
-    width: 100%; 
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
+    width: 94%;           /* 🔑 Em vez de 100%, usamos 94% para deixar margens */
+    max-width: 1200px;
+    margin: 20px auto;    /* 🔑 O 'auto' centraliza o bloco de 94% na tela */
+    padding: 0;           /* Zeramos o padding para não somar na largura */
 }
 
 .arte {
@@ -489,4 +493,25 @@ body, a, button, .botao-padrao, .arte, .formularios, input, label {
 .formularios input[type="radio"]:checked + span {
     font-weight: 700;
     color: #5d2828;
+}
+@media (max-width: 768px) {
+    /* Restaura o cursor para aparelhos touch */
+    body, a, button, .botao-padrao, .arte, .formularios, input, label {
+        cursor: auto !important; 
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-artes {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        width: 90%;       /* 🔑 No celular, apertamos um pouco mais a largura */
+        margin: 20px auto; /* 🔑 Garante a centralização */
+        gap: 8px;
+    }
+
+    .arte img {
+        width: 100%;      /* Garante que a imagem não escape do quadrado */
+        height: auto;
+        display: block;
+    }
 }
