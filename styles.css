@@ -310,7 +310,10 @@ footer {
     
     .imagem-com-texto {
         height: 70vh; /* Altura um pouco menor */
+        max-height: 820px;
         margin-top: 60px;
+        background-size:cover;
+        background-position: center;
     }
     
     .imagem-com-texto h1 {
