@@ -1,5 +1,8 @@
 let dados = [
     {
+        pathArte:"/img/can you find me.png"
+    },
+    {
         pathArte:"/img/stopthinkaboutit1.jpg"
     },
     {
