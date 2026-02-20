@@ -81,11 +81,11 @@ header {
 
 .imagem-com-texto {
     width: 100%; /* Usa 100% da largura do contêiner */
-    height: 100vh; /* Usa 70% da altura da viewport para ser responsivo */
+    height: 70vh; /* Usa 70% da altura da viewport para ser responsivo */
     max-height: 820px; /* Mantém um limite superior */
     background-image: url('/img/can you find me.png');
     background-size:cover;
-    background-position: center 10%;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
