@@ -246,96 +246,106 @@ footer {
 /* Oculta o Cursor Personalizado em Dispositivos Móveis */
 /* ----------------------------------------------------------------- */
 
-@media (max-width: 768px) {
-    /* Oculta o elemento do cursor */
-    #custom-cursor {
-        display: none !important;
-    }
-    
-    /* Restaura o cursor padrão do sistema para elementos interativos
-       (O 'cursor: none !important' global precisa ser desfeito, mas
-       como o cursor é controlado por toque, isso é principalmente uma garantia
-       para navegadores que tentam simular um cursor).
-    */
-    body, a, button, .botao-padrao, .arte, .formularios, input, label {
-        cursor: default !important;
-    }
+/* --- CONFIGURAÇÕES GLOBAIS --- */
+html, body {
+    overflow-x: hidden; /* 🔑 Resolve o problema do "zoom out" e tela solta */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* Telas Médias (Ex: Tablets na vertical) */
+
+body {
+    user-select: none;
+    -webkit-user-select: none; /* Corrigido de -webtkit- */
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Esconde o cursor padrão */
+body, a, button, .botao-padrao, .arte, .formularios, input, label {
+    cursor: none !important; 
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Telas Médias (Tablets) */
 @media (max-width: 1024px) {
     .grid-artes {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+        grid-template-columns: repeat(4, 1fr);
     }
-
     .imagem-com-texto h1 {
         font-size: 3rem;
     }
 }
 
-/* Telas Pequenas (Ex: Celulares) */
-@media (max-width: 600px) {
-    /* ... seu código existente ... */
-
-    .grid-artes {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-        padding: 0 10px;
+/* Ajustes para Cursor e Elementos (Tablets e Celulares) */
+@media (max-width: 768px) {
+    #custom-cursor {
+        display: none !important;
+    }
+    
+    /* Restaura o cursor em dispositivos touch para evitar bugs de interação */
+    body, a, button, .botao-padrao, .arte, .formularios, input, label {
+        cursor: auto !important; 
     }
 
-    /* 🔑 OTIMIZAÇÃO: Centraliza o texto explicativo */
+    .grid-artes {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para mobile médio */
+    }
+}
+
+/* Telas Pequenas (Celulares) */
+@media (max-width: 600px) {
+    .grid-artes {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+        gap: 10px; /* Garante que as artes não batam uma na outra */
+    }
+
     .texto-explicativo {
         margin-top: 50px;
-        margin-left: 0; /* Remove a margem grande */
+        margin-left: 0;
         text-align: center;
         padding: 0 15px;
     }
 
     .logo {
-        width: 60px;
-        height: 60px;
-        margin-right: 20px; /* Reduz a margem do logo */
+        width: 50px; /* Reduzi um pouco mais para caber melhor */
+        height: 50px;
+        margin-right: 10px;
     }
 
     .header-group-left {
-        /* Permite que os botões de ação do cabeçalho quebrem se necessário */
         flex-wrap: wrap; 
+        justify-content: center; /* Centraliza itens no topo se quebrar */
     }
     
     .botao-padrao {
-        width: 100px; /* Reduz ligeiramente */
-        height: 45px;
-        font-size: 0.8rem;
-        margin-right: 5px; /* Reduz a margem entre eles */
-        margin-bottom: 5px; /* Adiciona espaço para quebra */
+        width: 90px;
+        height: 40px;
+        font-size: 0.75rem;
+        margin: 2px;
     }
     
     .imagem-com-texto {
-        height: 70vh; /* Altura um pouco menor */
-        max-height: 820px;
-        margin-top: 60px;
-        background-size:cover;
+        height: 60vh; /* Ajustado para não ficar longo demais no celular */
+        max-height: 500px; /* Mobile não precisa de 820px de altura */
+        margin-top: 20px;
+        background-size: cover;
         background-position: center;
     }
     
     .imagem-com-texto h1 {
-        font-size: 1.8rem; /* Título bem menor */
-    }
-    
-    /* Adicione esta regra para garantir que a área do formulário fique bem */
-    .formularios {
+        font-size: 1.5rem; /* Ajuste para não quebrar em 3 linhas */
         padding: 0 10px;
     }
-}
 
-body {
-user-select: none;
--webtkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-}
-
-/* 1. Esconde o cursor padrão do sistema em todos os lugares */
-body, a, button, .botao-padrao, .botao-padrao:active, .botao-padrao:hover, .arte, .formularios, input, label {
-    cursor: none !important; 
+    .formularios {
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não empurre a largura */
+    }
 }
 
 /* 2. Estiliza o ponto personalizado */
