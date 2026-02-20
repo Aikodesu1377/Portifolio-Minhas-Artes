@@ -309,7 +309,8 @@ footer {
     }
     
     .imagem-com-texto {
-        height: 40vh; /* Altura um pouco menor */
+        height: 70vh; /* Altura um pouco menor */
+        margin-top: 60px;
     }
     
     .imagem-com-texto h1 {
