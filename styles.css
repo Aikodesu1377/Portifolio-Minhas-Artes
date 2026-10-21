@@ -356,7 +356,7 @@ body, a, button, .botao-padrao, .arte, .formularios, input, label {
     
     /* 🔑 MUDANÇA: Preenchimento totalmente transparente */
     background-color: transparent; 
-    border: 1px solid rgb(212, 25, 25); 
+    border: 1px solid rgb(212, 25, 150); 
     
     border-radius: 50%;
     position: fixed; 
@@ -375,8 +375,8 @@ body, a, button, .botao-padrao, .arte, .formularios, input, label {
     height: 30px !important;
     
     /* 🔑 MUDANÇA: Preenche o círculo quando ativo */
-    background-color: rgba(176, 70, 70, 0.8) !important; /* Cor do preenchimento semi-transparente */
-    border: 2px solid rgb(212, 25, 25); 
+    background-color: rgba(176, 70, 169, 0.8) !important; /* Cor do preenchimento semi-transparente */
+    border: 2px solid rgb(212, 25, 150); 
     /* 🔑 ADIÇÃO: Remove a borda para deixar só o preenchimento */
     border-color: transparent !important; 
 }
