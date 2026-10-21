@@ -62,4 +62,13 @@ let dados = [
     {
         pathArte:"/img/ariesstar.png"
     },
+    {
+        pathArte:"/img/bannergabi.png"
+    },
+    {
+        pathArte:"/img/sun goes down aries.png"
+    },
+    {
+        pathArte:"/img/sayonara sekai.png"
+    },
 ]
